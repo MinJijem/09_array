@@ -2,21 +2,51 @@
 #include <stdlib.h>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+void addMatrix(int A[][3],int B[][3],int C[][3])
+{
+	int i;
+	int j;
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			C[i][j]=A[i][j]+B[i][j];
+		}
+	}
+	
+	
+}
+void printMatrix(int A[][3])
+{
+	int i,j;
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d ",A[i][j]);
+		}
+	printf("\n");
+	}
+}
 int main(int argc, char *argv[]) {
 	
+	int A[3][3]={
+	{2,3,0},
+	{8,9,1},
+	{7,0,5}};
 	
-	int i;
-	int grade[5];
-	int score[5];
+	int B[3][3]={
+	{1,0,0},
+	{0,1,0},
+	{0,0,1}};
 	
-	for(i=0;i<5;i++)
-		grade[i]=rand()%100;
-		
-	for(i=0;i<5;i++)
-		grade[i]=score[i];
+	int C[3][3];
 	
-	for(i=0;i<5;i++)
-		printf("score[%d]=%d\n",i,score[i]);
+	addMatrix(A,B,C);
+	printMatrix(C);
+	
 		
 	return 0;
 }
